@@ -1,0 +1,73 @@
+{
+  "header": {
+    "eyebrow": "사주팔자",
+    "title1": "Four Pillars",
+    "title2": "of Destiny"
+  },
+  "form": {
+    "title": "Birth Data",
+    "year": "Year",
+    "month": "Month",
+    "day": "Day",
+    "hour": "Hour (0-23)",
+    "minute": "Minutes",
+    "gender": "Gender",
+    "male": "♂ Male",
+    "female": "♀ Female",
+    "calc_btn": "CALCULATE SAJU · 계산하기"
+  },
+  "sections": {
+    "calculator": "계산기 · Calculator",
+    "saju": "사주 · The Four Pillars",
+    "elements": "오행 · Five Elements",
+    "daeun": "대운 · Major Luck Cycles"
+  },
+  "pillar": {
+    "year": "Year",
+    "month": "Month",
+    "day": "Day",
+    "hour": "Hour",
+    "day_master_badge": "日主"
+  },
+  "elements": {
+    "wood": "Wood",
+    "fire": "Fire",
+    "earth": "Earth",
+    "metal": "Metal",
+    "water": "Water",
+    "day_master_tag": "← Day Master"
+  },
+  "meta": {
+    "all_yin": "All-Yin Chart",
+    "yes_rare": "Yes ★ (rare)",
+    "no": "No",
+    "day_master": "Day Master",
+    "strength_lbl": "Strength",
+    "strong": "Strong 신강",
+    "moderate": "Moderate",
+    "weak": "Weak 신약",
+    "edge_warning_title": "Transition Dependency",
+    "edge_warning_desc": "Your birth date falls gracefully on a Solar Term transition boundary. Depending on your geographical timezone relative to UTC+8, your Month Pillar may belong to the adjacent month. Please verify exact True Solar Time transitions with an advanced chart if unsure."
+  },
+  "daeun": {
+    "year": "year",
+    "forward": "Forward 순행",
+    "backward": "Backward 역행",
+    "first_cycle": "first cycle at",
+    "years_old": "years old",
+    "now": "NOW",
+    "years": "years"
+  },
+  "footer": {
+    "disclaimer": "Interpretive reading based on the classical Korean Saju system.",
+    "male": "Male",
+    "female": "Female"
+  },
+  "animals": [
+    "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake",
+    "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"
+  ],
+  "polarity": {
+    "yang": "Yang", "yin": "Yin"
+  }
+}

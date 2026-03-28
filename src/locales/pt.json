@@ -1,0 +1,73 @@
+{
+  "header": {
+    "eyebrow": "사주팔자",
+    "title1": "Quatro Pilares",
+    "title2": "do Destino"
+  },
+  "form": {
+    "title": "Dados de Nascimento",
+    "year": "Ano",
+    "month": "Mês",
+    "day": "Dia",
+    "hour": "Hora (0-23)",
+    "minute": "Minutos",
+    "gender": "Sexo",
+    "male": "♂ Masculino",
+    "female": "♀ Feminino",
+    "calc_btn": "CALCULAR SAJU · 계산하기"
+  },
+  "sections": {
+    "calculator": "계산기 · Calculadora",
+    "saju": "사주 · Os Quatro Pilares",
+    "elements": "오행 · Cinco Elementos",
+    "daeun": "대운 · Grandes Ciclos de Sorte"
+  },
+  "pillar": {
+    "year": "Ano",
+    "month": "Mês",
+    "day": "Dia",
+    "hour": "Hora",
+    "day_master_badge": "日主"
+  },
+  "elements": {
+    "wood": "Madeira",
+    "fire": "Fogo",
+    "earth": "Terra",
+    "metal": "Metal",
+    "water": "Água",
+    "day_master_tag": "← Mestre do Dia"
+  },
+  "meta": {
+    "all_yin": "Mapa todo-Yin",
+    "yes_rare": "Sim ★ (raro)",
+    "no": "Não",
+    "day_master": "Mestre do Dia",
+    "strength_lbl": "Força",
+    "strong": "Forte 신강",
+    "moderate": "Moderado",
+    "weak": "Fraco 신약",
+    "edge_warning_title": "Dependência de Transição",
+    "edge_warning_desc": "O instante do seu nascimento cai numa fronteira de transição do termo solar. Dependendo da sua longitude horária comparada a UTC+8, o seu Pilar de Mês poderá diferir ou pular para o mês adjacente. Verifique manualmente a Hora Solar Verdadeira."
+  },
+  "daeun": {
+    "year": "ano",
+    "forward": "Avanço 순행",
+    "backward": "Retrocesso 역행",
+    "first_cycle": "primeiro ciclo aos",
+    "years_old": "anos",
+    "now": "AGORA",
+    "years": "anos"
+  },
+  "footer": {
+    "disclaimer": "Leitura interpretativa baseada no sistema Saju coreano clássico.",
+    "male": "Masculino",
+    "female": "Feminino"
+  },
+  "animals": [
+    "Rato", "Boi", "Tigre", "Coelho", "Dragão", "Serpente",
+    "Cavalo", "Cabra", "Macaco", "Galo", "Cão", "Porco"
+  ],
+  "polarity": {
+    "yang": "Yang", "yin": "Yin"
+  }
+}

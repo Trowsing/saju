@@ -1,0 +1,73 @@
+{
+  "header": {
+    "eyebrow": "사주팔자",
+    "title1": "Cuatro Pilares",
+    "title2": "del Destino"
+  },
+  "form": {
+    "title": "Datos de nacimiento",
+    "year": "Año",
+    "month": "Mes",
+    "day": "Día",
+    "hour": "Hora (0-23)",
+    "minute": "Minutos",
+    "gender": "Sexo",
+    "male": "♂ Masculino",
+    "female": "♀ Femenino",
+    "calc_btn": "CALCULAR SAJU · 계산하기"
+  },
+  "sections": {
+    "calculator": "계산기 · Calculadora",
+    "saju": "사주 · Los Cuatro Pilares",
+    "elements": "오행 · Cinco Elementos",
+    "daeun": "대운 · Grandes Ciclos de Suerte"
+  },
+  "pillar": {
+    "year": "Año",
+    "month": "Mes",
+    "day": "Día",
+    "hour": "Hora",
+    "day_master_badge": "日主"
+  },
+  "elements": {
+    "wood": "Madera",
+    "fire": "Fuego",
+    "earth": "Tierra",
+    "metal": "Metal",
+    "water": "Agua",
+    "day_master_tag": "← Día Maestro"
+  },
+  "meta": {
+    "all_yin": "Carta todo-Yin",
+    "yes_rare": "Sí ★ (raro)",
+    "no": "No",
+    "day_master": "Día Maestro",
+    "strength_lbl": "Fuerza",
+    "strong": "Fuerte 신강",
+    "moderate": "Moderado",
+    "weak": "Débil 신약",
+    "edge_warning_title": "Dependencia de Transición",
+    "edge_warning_desc": "El día de nacimiento exacto cae en la transición del término solar. Dependiendo de tu zona horaria local respecto al estándar de UTC+8, el Pilar del Mes puede diferir a un mes adyacente. Por favor, asegúrate con la Hora Solar Verdadera."
+  },
+  "daeun": {
+    "year": "año",
+    "forward": "Avance 순행",
+    "backward": "Retroceso 역행",
+    "first_cycle": "primer ciclo a los",
+    "years_old": "años",
+    "now": "AHORA",
+    "years": "años"
+  },
+  "footer": {
+    "disclaimer": "Lectura orientativa basada en el sistema Saju coreano clásico.",
+    "male": "Masculino",
+    "female": "Femenino"
+  },
+  "animals": [
+    "Rata", "Buey", "Tigre", "Conejo", "Dragón", "Serpiente",
+    "Caballo", "Cabra", "Mono", "Gallo", "Perro", "Cerdo"
+  ],
+  "polarity": {
+    "yang": "Yang", "yin": "Yin"
+  }
+}
