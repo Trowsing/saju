@@ -400,6 +400,18 @@
     margin-left: 4px;
     vertical-align: middle;
   }
+  .formation-badge {
+    display: inline-block;
+    font-size: 12px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 2px 6px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
 
   /* Ornament */
   .ornament {
@@ -409,6 +421,51 @@
     font-size: 16px;
     letter-spacing: 10px;
     margin: 28px 0;
+  }
+
+  /* AI Interpretation */
+  .ai-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 32px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .ai-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    background: #fff;
+    box-shadow: 0 1px 8px var(--shadow);
+  }
+  .ai-btn svg { width: 16px; height: 16px; }
+  .ai-chatgpt {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+  }
+  .ai-chatgpt:hover {
+    background: var(--gold);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(138,101,32,0.15);
+  }
+  .ai-copy {
+    border: 1px solid var(--border);
+    color: var(--ink2);
+  }
+  .ai-copy:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+    box-shadow: 0 4px 16px rgba(28,22,14,0.1);
   }
 
   /* Footer */

@@ -41,9 +41,6 @@
     "day_master_tag": "← Day Master"
   },
   "meta": {
-    "all_yin": "All-Yin Chart",
-    "yes_rare": "Yes ★ (rare)",
-    "no": "No",
     "day_master": "Day Master",
     "strength_lbl": "Strength",
     "strong": "Strong 신강",
@@ -51,6 +48,13 @@
     "weak": "Weak 신약",
     "edge_warning_title": "Transition Dependency",
     "edge_warning_desc": "Your birth date falls gracefully on a Solar Term transition boundary. Depending on your geographical timezone relative to UTC+8, your Month Pillar may belong to the adjacent month. Please verify exact True Solar Time transitions with an advanced chart if unsure."
+  },
+  "formations": {
+    "title": "Special Formations",
+    "all_yin": "All-Yin Chart",
+    "all_yang": "All-Yang Chart",
+    "penalty_fire": "Three Penalties (Fire/Power)",
+    "penalty_earth": "Three Penalties (Earth)"
   },
   "daeun": {
     "year": "year",
@@ -61,6 +65,13 @@
     "now": "NOW",
     "years": "years",
     "transition": "Transitions exactly on {{day}}/{{month}}"
+  },
+  "ai": {
+    "section_title": "AI Interpretation",
+    "ask_chatgpt": "Chat with ChatGPT",
+    "copy_prompt": "Copied!",
+    "copy_btn": "Copy Prompt",
+    "prompt_template": "Act as an expert in Bazi / Four Pillars of Destiny (Saju). Please interpret this birth chart:\n\n- Gender: {{gender}}\n- Day Master: {{dayMaster}} (Strength: {{strength}})\n- Year Pillar: {{yearPillar}}\n- Month Pillar: {{monthPillar}}\n- Day Pillar: {{dayPillar}}\n- Hour Pillar: {{hourPillar}}\n\n- Current 10-Year Luck Cycle: {{currentCycle}} (starting at age {{startAge}})\nElements distribution: {{elements}}\n\nPlease provide a detailed personality reading, advise on the right timing to invest, career advice, identify my Favorable Elements (Yongshin), and what to look out for this year and in the current 10-year luck cycle."
   },
   "footer": {
     "disclaimer": "Interpretive reading based on the classical Korean Saju system.",

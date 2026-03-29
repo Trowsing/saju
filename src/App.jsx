@@ -82,15 +82,31 @@ function ElementsAnalysis({ pillars, ds }) {
 
 function ChartMeta({ pillars, ds, elemCount, dayElem }) {
   const { t } = useTranslation();
-  const allYin = pillars.every(p => STEMS_POLARITY[p.s] === 'yin' && BRANCHES_POLARITY[p.b] === 'yin');
   const dmCount = elemCount[dayElem] || 0;
   const strength = dmCount >= 3 ? t('meta.strong') : dmCount === 2 ? t('meta.moderate') : t('meta.weak');
 
+  const branches = pillars.map(p => p.b);
+  const isFirePenalty = branches.includes(2) && branches.includes(5) && branches.includes(8);
+  const isEarthPenalty = branches.includes(1) && branches.includes(10) && branches.includes(7);
+  const isAllYin = pillars.every(p => STEMS_POLARITY[p.s] === 'yin' && BRANCHES_POLARITY[p.b] === 'yin');
+  const isAllYang = pillars.every(p => STEMS_POLARITY[p.s] === 'yang' && BRANCHES_POLARITY[p.b] === 'yang');
+
+  const formations = [];
+  if (isAllYin) formations.push('all_yin');
+  if (isAllYang) formations.push('all_yang');
+  if (isFirePenalty) formations.push('penalty_fire');
+  if (isEarthPenalty) formations.push('penalty_earth');
+
   return (
     <>
-      <span className="meta-item">{t('meta.all_yin')}: <strong>{allYin ? t('meta.yes_rare') : t('meta.no')}</strong></span>
       <span className="meta-item">{t('meta.day_master')}: <strong>{STEMS[ds]} ({STEMS_NAME[ds]}) — {t(`elements.${dayElem}`)} {t(`polarity.${STEMS_POLARITY[ds]}`)}</strong></span>
       <span className="meta-item">{t('meta.strength_lbl')}: <strong>{strength}</strong></span>
+      {formations.length > 0 && (
+        <span className="meta-item" style={{ width: '100%' }}>
+          {t('formations.title')}: 
+          {formations.map(f => <span key={f} className="formation-badge">{t(`formations.${f}`)}</span>)}
+        </span>
+      )}
     </>
   );
 }
@@ -122,6 +138,85 @@ function DaeunCycles({ cycles, currentYear }) {
         );
       })}
     </div>
+  );
+}
+
+function AiInterpretationCard({ calcData }) {
+  const { t } = useTranslation();
+  const [copied, setCopied] = useState(false);
+
+  if (!calcData) return null;
+
+  const formatPillar = (s, b) => {
+    const sElem = t(`elements.${STEMS_ELEMENT[s]}`);
+    const sPol = t(`polarity.${STEMS_POLARITY[s]}`);
+    const bAnimal = t(`animals.${b}`);
+    return `${sPol} ${sElem} ${bAnimal}`;
+  };
+
+  const dayMasterStr = `${t(`polarity.${STEMS_POLARITY[calcData.ds]}`)} ${t(`elements.${STEMS_ELEMENT[calcData.ds]}`)}`;
+
+  const currentYear = new Date().getFullYear();
+  const currentCycle = calcData.cycles.find(c => currentYear >= c.yrStart && currentYear <= c.yrEnd) || calcData.cycles[0];
+  const cycleStr = formatPillar(currentCycle.s, currentCycle.b);
+
+  const elemCount = {};
+  for (const p of calcData.pillars) {
+    const eS = STEMS_ELEMENT[p.s];
+    elemCount[eS] = (elemCount[eS] || 0) + 1;
+    const eB = BRANCHES_ELEMENT[p.b];
+    elemCount[eB] = (elemCount[eB] || 0) + 1;
+  }
+  const elementsList = ["wood", "fire", "earth", "metal", "water"];
+  const elementsStr = elementsList
+    .map(elem => {
+      const c = elemCount[elem] || 0;
+      return `${c} ${t(`elements.${elem}`)}`;
+    })
+    .join(', ');
+
+  const dayElem = STEMS_ELEMENT[calcData.ds];
+  const dmCount = elemCount[dayElem] || 0;
+  const strengthStr = dmCount >= 3 ? t('meta.strong') : dmCount === 2 ? t('meta.moderate') : t('meta.weak');
+
+  const promptText = t('ai.prompt_template', {
+    gender: calcData.isMale ? t('footer.male') : t('footer.female'),
+    dayMaster: dayMasterStr,
+    strength: strengthStr.split(' ')[0],
+    yearPillar: formatPillar(calcData.pillars[0].s, calcData.pillars[0].b),
+    monthPillar: formatPillar(calcData.pillars[1].s, calcData.pillars[1].b),
+    dayPillar: formatPillar(calcData.pillars[2].s, calcData.pillars[2].b),
+    hourPillar: formatPillar(calcData.pillars[3].s, calcData.pillars[3].b),
+    currentCycle: cycleStr,
+    startAge: currentCycle.ageStart || calcData.startAge,
+    elements: elementsStr
+  });
+
+  const chatGptUrl = `https://chatgpt.com/?q=${encodeURIComponent(promptText)}`;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(promptText);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <>
+      <div className="section-label">{t('ai.section_title')}</div>
+      <div className="ai-card">
+        <a href={chatGptUrl} target="_blank" rel="noopener noreferrer" className="ai-btn ai-chatgpt">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          {t('ai.ask_chatgpt')}
+        </a>
+        <button className="ai-btn ai-copy" onClick={handleCopy}>
+          {copied ? (
+            <><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> {t('ai.copy_prompt')}</>
+          ) : (
+            <><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg> {t('ai.copy_btn')}</>
+          )}
+        </button>
+      </div>
+    </>
   );
 }
 
@@ -259,6 +354,8 @@ export default function App() {
             </div>
             <DaeunCycles cycles={calcData.cycles} currentYear={new Date().getFullYear()} />
           </div>
+
+          <AiInterpretationCard calcData={calcData} />
 
           <div className="footer">
             {calcData.day.toString().padStart(2, '0')}/{calcData.month.toString().padStart(2, '0')}/{calcData.year} &nbsp; {calcData.hour.toString().padStart(2, '0')}:{calcData.minute.toString().padStart(2, '0')} &nbsp; {calcData.isMale ? t('footer.male') : t('footer.female')}<br />

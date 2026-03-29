@@ -41,9 +41,6 @@
     "day_master_tag": "← Mestre do Dia"
   },
   "meta": {
-    "all_yin": "Mapa todo-Yin",
-    "yes_rare": "Sim ★ (raro)",
-    "no": "Não",
     "day_master": "Mestre do Dia",
     "strength_lbl": "Força",
     "strong": "Forte 신강",
@@ -51,6 +48,13 @@
     "weak": "Fraco 신약",
     "edge_warning_title": "Dependência de Transição",
     "edge_warning_desc": "O instante do seu nascimento cai numa fronteira de transição do termo solar. Dependendo da sua longitude horária comparada a UTC+8, o seu Pilar de Mês poderá diferir ou pular para o mês adjacente. Verifique manualmente a Hora Solar Verdadeira."
+  },
+  "formations": {
+    "title": "Formações Especiais",
+    "all_yin": "Mapa todo-Yin",
+    "all_yang": "Mapa todo-Yang",
+    "penalty_fire": "Três Punições (Fogo/Poder)",
+    "penalty_earth": "Três Punições (Terra)"
   },
   "daeun": {
     "year": "ano",
@@ -61,6 +65,13 @@
     "now": "AGORA",
     "years": "anos",
     "transition": "Transição exata em {{day}}/{{month}}"
+  },
+  "ai": {
+    "section_title": "Interpretação por IA",
+    "ask_chatgpt": "Conversar no ChatGPT",
+    "copy_prompt": "Copiado!",
+    "copy_btn": "Copiar Prompt",
+    "prompt_template": "Atue como um especialista em Bazi / Quatro Pilares do Destino (Saju). Por favor, interprete este mapa astral:\n\n- Gênero: {{gender}}\n- Mestre do Dia: {{dayMaster}} (Força: {{strength}})\n- Pilar do Ano: {{yearPillar}}\n- Pilar do Mês: {{monthPillar}}\n- Pilar do Dia: {{dayPillar}}\n- Pilar da Hora: {{hourPillar}}\n\n- Ciclo Atual de Sorte (10 anos): {{currentCycle}} (começa aos {{startAge}} anos)\nDistribuição dos Elementos: {{elements}}\n\nPor favor, forneça uma leitura detalhada de personalidade, aconselhamento sobre o momento certo para investir, conselhos de carreira, identifique meus Elementos Favoráveis (Yongshin) e o que devo ter atenção neste ano e no meu atual ciclo de sorte de 10 anos."
   },
   "footer": {
     "disclaimer": "Leitura interpretativa baseada no sistema Saju coreano clássico.",
