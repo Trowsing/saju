@@ -59,7 +59,7 @@ function ElementsAnalysis({ pillars, ds }) {
           const c = elemCount[elem] || 0;
           const pct = maxC === 0 ? 0 : Math.round((c / maxC) * 100);
           const isDayMaster = elem === dayElem;
-          
+
           return (
             <div key={elem} className="elem-row">
               <span className={`elem-name c-${ELEM_COLOR[elem]}`}>{t(`elements.${elem}`)}</span>
@@ -72,7 +72,7 @@ function ElementsAnalysis({ pillars, ds }) {
           );
         })}
       </div>
-      
+
       <div className="chart-meta">
         <ChartMeta pillars={pillars} ds={ds} elemCount={elemCount} dayElem={dayElem} />
       </div>
@@ -127,7 +127,7 @@ function DaeunCycles({ cycles, currentYear }) {
 
 export default function App() {
   const { t, i18n } = useTranslation();
-  
+
   const [formData, setFormData] = useState({
     year: '1999',
     month: '12',
@@ -237,10 +237,10 @@ export default function App() {
           {calcData.isEdgeCase && (
             <div className="boundary-warning" style={{ background: 'var(--bg-card)', padding: '16px', borderRadius: '8px', border: '1px solid var(--border)', marginBottom: '24px', fontSize: '0.9rem', color: 'var(--ink)' }}>
               <strong>⚠️ {t('meta.edge_warning_title')}</strong><br />
-              <span style={{opacity: 0.8}}>{t('meta.edge_warning_desc')}</span>
+              <span style={{ opacity: 0.8 }}>{t('meta.edge_warning_desc')}</span>
             </div>
           )}
-          
+
           <div className="pillars-grid">
             {calcData.pillars.map((p, i) => (
               <PillarCard key={i} {...p} />
@@ -255,7 +255,7 @@ export default function App() {
           <div className="section-label">{t('sections.daeun')}</div>
           <div className="daeun-card">
             <div className="daeun-header">
-              {STEMS[calcData.ys]} ({t('daeun.year')} {t(`polarity.${calcData.ys % 2 === 0 ? 'yang' : 'yin'}`)}) + {calcData.isMale ? t('footer.male') : t('footer.female')} → {calcData.direction === 1 ? t('daeun.forward') : t('daeun.backward')} &nbsp;·&nbsp; {t('daeun.first_cycle')} {calcData.startAge} {t('daeun.years_old')} (~{calcData.year + calcData.startAge})
+              {STEMS[calcData.ys]} ({t('daeun.year')} {t(`polarity.${calcData.ys % 2 === 0 ? 'yang' : 'yin'}`)}) + {calcData.isMale ? t('footer.male') : t('footer.female')} → {calcData.direction === 1 ? t('daeun.forward') : t('daeun.backward')} &nbsp;·&nbsp; {t('daeun.first_cycle')} {calcData.startAge} {t('daeun.years_old')} (~{calcData.year + calcData.startAge}) &nbsp;·&nbsp; {t('daeun.transition', { day: calcData.transitionDay.toString().padStart(2, '0'), month: calcData.transitionMonth.toString().padStart(2, '0') })}
             </div>
             <DaeunCycles cycles={calcData.cycles} currentYear={new Date().getFullYear()} />
           </div>
@@ -263,20 +263,20 @@ export default function App() {
           <div className="footer">
             {calcData.day.toString().padStart(2, '0')}/{calcData.month.toString().padStart(2, '0')}/{calcData.year} &nbsp; {calcData.hour.toString().padStart(2, '0')}:{calcData.minute.toString().padStart(2, '0')} &nbsp; {calcData.isMale ? t('footer.male') : t('footer.female')}<br />
             <em>{t('footer.disclaimer')}</em>
-            
+
             <div style={{ marginTop: '24px', display: 'flex', gap: '8px', justifyContent: 'center' }}>
-              <button 
-                onClick={() => changeLanguage('en')} 
+              <button
+                onClick={() => changeLanguage('en')}
                 style={{ background: 'transparent', border: '1px solid var(--border)', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontFamily: 'inherit', color: 'var(--ink)' }}>
                 EN
               </button>
-              <button 
-                onClick={() => changeLanguage('es')} 
+              <button
+                onClick={() => changeLanguage('es')}
                 style={{ background: 'transparent', border: '1px solid var(--border)', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontFamily: 'inherit', color: 'var(--ink)' }}>
                 ES
               </button>
-              <button 
-                onClick={() => changeLanguage('pt')} 
+              <button
+                onClick={() => changeLanguage('pt')}
                 style={{ background: 'transparent', border: '1px solid var(--border)', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontFamily: 'inherit', color: 'var(--ink)' }}>
                 PT
               </button>

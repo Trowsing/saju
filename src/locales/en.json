@@ -59,7 +59,8 @@
     "first_cycle": "first cycle at",
     "years_old": "years old",
     "now": "NOW",
-    "years": "years"
+    "years": "years",
+    "transition": "Transitions exactly on {{day}}/{{month}}"
   },
   "footer": {
     "disclaimer": "Interpretive reading based on the classical Korean Saju system.",

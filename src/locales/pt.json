@@ -54,12 +54,13 @@
   },
   "daeun": {
     "year": "ano",
-    "forward": "Avanço 순행",
-    "backward": "Retrocesso 역행",
+    "forward": "Direto 순행",
+    "backward": "Inverso 역행",
     "first_cycle": "primeiro ciclo aos",
     "years_old": "anos",
     "now": "AGORA",
-    "years": "anos"
+    "years": "anos",
+    "transition": "Transição exata em {{day}}/{{month}}"
   },
   "footer": {
     "disclaimer": "Leitura interpretativa baseada no sistema Saju coreano clássico.",

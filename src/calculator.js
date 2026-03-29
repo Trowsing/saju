@@ -34,8 +34,8 @@ export function calculateSaju(year, month, day, hour, minute, isMale) {
     cycles.push({
       s: STEMS.indexOf(ganzhi.substring(0, 1)),
       b: BRANCHES.indexOf(ganzhi.substring(1, 2)),
-      ageStart: dy.getStartAge(),
-      ageEnd: dy.getEndAge(),
+      ageStart: dy.getStartAge() - 1,
+      ageEnd: dy.getEndAge() - 1,
       yrStart: dy.getStartYear(),
       yrEnd: dy.getEndYear()
     });
@@ -50,6 +50,8 @@ export function calculateSaju(year, month, day, hour, minute, isMale) {
   const isEdgeCase = (baZi.getMonthZhi() !== prevSolar.getLunar().getEightChar().getMonthZhi()) || 
                      (baZi.getMonthZhi() !== nextSolar.getLunar().getEightChar().getMonthZhi());
 
+  const transitionSolar = yun.getStartSolar();
+
   return {
     pillars,
     ds,
@@ -57,6 +59,8 @@ export function calculateSaju(year, month, day, hour, minute, isMale) {
     startAge,
     startMonth: yun.getStartMonth(),
     startDay: yun.getStartDay(),
+    transitionMonth: transitionSolar.getMonth(),
+    transitionDay: transitionSolar.getDay(),
     direction: yun.isForward() ? 1 : -1,
     ys,
     isEdgeCase
