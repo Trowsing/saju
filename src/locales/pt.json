@@ -4,6 +4,9 @@
     "title1": "Quatro Pilares",
     "title2": "do Destino"
   },
+  "page": {
+    "title": "Calculadora dos Quatro Pilares"
+  },
   "form": {
     "title": "Dados de Nascimento",
     "year": "Ano",
@@ -64,10 +67,21 @@
     "female": "Feminino"
   },
   "animals": [
-    "Rato", "Boi", "Tigre", "Coelho", "Dragão", "Serpente",
-    "Cavalo", "Cabra", "Macaco", "Galo", "Cão", "Porco"
+    "Rato",
+    "Boi",
+    "Tigre",
+    "Coelho",
+    "Dragão",
+    "Serpente",
+    "Cavalo",
+    "Cabra",
+    "Macaco",
+    "Galo",
+    "Cão",
+    "Porco"
   ],
   "polarity": {
-    "yang": "Yang", "yin": "Yin"
+    "yang": "Yang",
+    "yin": "Yin"
   }
 }

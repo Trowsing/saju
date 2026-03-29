@@ -4,6 +4,9 @@
     "title1": "Four Pillars",
     "title2": "of Destiny"
   },
+  "page": {
+    "title": "Four Pillars Calculator"
+  },
   "form": {
     "title": "Birth Data",
     "year": "Year",
@@ -64,10 +67,21 @@
     "female": "Female"
   },
   "animals": [
-    "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake",
-    "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig"
+    "Rat",
+    "Ox",
+    "Tiger",
+    "Rabbit",
+    "Dragon",
+    "Snake",
+    "Horse",
+    "Goat",
+    "Monkey",
+    "Rooster",
+    "Dog",
+    "Pig"
   ],
   "polarity": {
-    "yang": "Yang", "yin": "Yin"
+    "yang": "Yang",
+    "yin": "Yin"
   }
 }

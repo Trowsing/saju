@@ -178,6 +178,10 @@ export default function App() {
     handleCalculate();
   }, [i18n.language]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    document.title = t('page.title');
+  }, [i18n.language, t]);
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
